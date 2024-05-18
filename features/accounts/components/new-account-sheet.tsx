@@ -3,6 +3,7 @@ import {
   SheetContent,
   SheetDescription,
   SheetHeader,
+  SheetTitle,
 } from "@/components/ui/sheet";
 import { useNewAccount } from "../hooks/use-new-account";
 import { AccountForm } from "./account-form";
@@ -32,7 +33,12 @@ export const NewAccountSheet = () => {
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent className="space-y-4">
-        <SheetHeader>New Account</SheetHeader>
+        <SheetHeader>
+          <SheetTitle>New Account</SheetTitle>
+        </SheetHeader>
+        <SheetDescription>
+          Create a new account to track your transactions
+        </SheetDescription>
         <AccountForm
           onSubmit={onSubmit}
           disabled={mutation.isPending}
@@ -40,9 +46,6 @@ export const NewAccountSheet = () => {
             name: "",
           }}
         />
-        <SheetDescription>
-          Create a new account to track your transactions
-        </SheetDescription>
       </SheetContent>
     </Sheet>
   );
