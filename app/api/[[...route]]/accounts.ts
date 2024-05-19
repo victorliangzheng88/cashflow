@@ -172,7 +172,7 @@ const app = new Hono()
         });
 
       if (!data) {
-        return c.json({ error: "Account not found" }, 404);
+        return c.json({ error: "Not found" }, 404);
       }
 
       return c.json({ data });
